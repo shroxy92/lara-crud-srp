@@ -33,6 +33,9 @@
                 <td>{{ $reguser->name }}</td>
                 <td>{{ $reguser->email }}</td>
                 <td>
+{{--                    <a href="{{ route('reguser.show', $reguser->id) }}" class="btn btn-info btn-sm">View</a>--}}
+{{--                    <a href="{{ route('reguser.edit', $reguser->id) }}" class="btn btn-warning btn-sm">Edit</a>--}}
+{{--                    <form action="{{ route('reguser.destroy', $reguser->id) }}" method="POST" style="display:inline;">--}}
                     <a href="" class="btn btn-info btn-sm">View</a>
                     <a href="" class="btn btn-warning btn-sm">Edit</a>
                     <form action="" method="POST" style="display:inline;">
