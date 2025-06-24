@@ -21,7 +21,7 @@
         </div>
     @endif
 
-    <form action="{{ route('reguser.update', $user->id) }}" method="POST">
+    <form action="{{ route('home.editForm', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -41,7 +41,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('reguser.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('home') }}" class="btn btn-secondary">Back</a>
     </form>
 </div>
 

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repository\Contracts\RegisterRepositoryInterface;
 use App\Services\Contracts\RegistrationServiceInterface;
+use Illuminate\Http\Request;
 
 class RegistrationServiceImp implements RegistrationServiceInterface
 {
@@ -24,13 +25,13 @@ class RegistrationServiceImp implements RegistrationServiceInterface
         return $this->registerRepositoryInterface->getRegisteredUserById($id);
     }
 
-    public function createUser(array $user)
+    public function createUser(Request $user)
     {
         // TODO: Implement createUser() method.
         return $this->registerRepositoryInterface->createUser($user);
     }
 
-    public function updateUser($id, array $user)
+    public function updateUser($id, Request $user)
     {
         // TODO: Implement updateUser() method.
         return $this->registerRepositoryInterface->updateUser($id, $user);
@@ -40,5 +41,11 @@ class RegistrationServiceImp implements RegistrationServiceInterface
     {
         // TODO: Implement deleteUser() method.
         return $this->registerRepositoryInterface->deleteUser($id);
+    }
+
+    public function editUserForm($id)
+    {
+        // TODO: Implement editUserForm() method.
+        return $this->registerRepositoryInterface->getUserDataForEdit($id);
     }
 }

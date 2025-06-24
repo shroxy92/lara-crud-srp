@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <a href="{{ route('reguser.index') }}" class="btn btn-secondary mt-3">Back</a>
+    <a href="{{ route('home') }}" class="btn btn-secondary mt-3">Back</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

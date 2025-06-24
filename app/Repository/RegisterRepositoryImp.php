@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Models\RegisterUser;
 use App\Repository\Contracts\RegisterRepositoryInterface;
+use Illuminate\Http\Request;
 
 class RegisterRepositoryImp implements RegisterRepositoryInterface
 {
@@ -41,14 +42,14 @@ class RegisterRepositoryImp implements RegisterRepositoryInterface
         return $this->registerModel->findOrFail($username);
     }
 
-    public function createUser(Request|array $user)
+    public function createUser(Request $user)
     {
         // TODO: Implement createUser() method.
         return $this->registerModel::create($user->all());
 
     }
 
-    public function updateUser($id, Request|array $user)
+    public function updateUser($id, Request $user)
     {
         // TODO: Implement updateUser() method.
         $updateUser = $this->registerModel::findOrFail($id);
@@ -68,5 +69,11 @@ class RegisterRepositoryImp implements RegisterRepositoryInterface
     public function deleteUser($id)
     {
         // TODO: Implement deleteUser() method.
+    }
+
+    public function getUserDataForEdit($id)
+    {
+        // TODO: Implement getUserDataForEdit() method.
+        return $this->registerModel::findOrFail($id);
     }
 }

@@ -43,7 +43,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Create</button>
-        <a href="{{ route('home.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('home') }}" class="btn btn-secondary">Back</a>
     </form>
 </div>
 

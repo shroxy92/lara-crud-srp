@@ -17,7 +17,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <a href="{{ route('create') }}" class="btn btn-success mb-3">Create New User</a>
+    <a href="{{ route('home.createForm') }}" class="btn btn-success mb-3">Create New User</a>
 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
@@ -33,12 +33,9 @@
                 <td>{{ $reguser->name }}</td>
                 <td>{{ $reguser->email }}</td>
                 <td>
-{{--                    <a href="{{ route('reguser.show', $reguser->id) }}" class="btn btn-info btn-sm">View</a>--}}
-{{--                    <a href="{{ route('reguser.edit', $reguser->id) }}" class="btn btn-warning btn-sm">Edit</a>--}}
-{{--                    <form action="{{ route('reguser.destroy', $reguser->id) }}" method="POST" style="display:inline;">--}}
-                    <a href="" class="btn btn-info btn-sm">View</a>
-                    <a href="" class="btn btn-warning btn-sm">Edit</a>
-                    <form action="" method="POST" style="display:inline;">
+                    <a href="{{ route('home.showForm', $reguser->id) }}" class="btn btn-info btn-sm">View</a>
+                    <a href="{{ route('home.editUserForm', $reguser->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ route('home.delete', $reguser->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">

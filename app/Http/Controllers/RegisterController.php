@@ -18,8 +18,14 @@ class RegisterController extends Controller
         //return $this->registerService->createUser();
         return view('create');
     }
-    public function updateUser($id){
-        return $this->registerService->updateUser($id);
+    public function editUserForm($id)
+    {
+        $user = $this->registerService->editUserForm($id);
+        return view('edit', compact('user'));
+    }
+    public function updateUser(Request $request, $id){
+        $flag = $this->registerService->updateUser($id, $request);
+        return redirect()->route('home')->with('success', 'User updated successfully');
     }
     public function allUsers(){
         $requsers =  $this->registerService->getAllUsers();
@@ -27,8 +33,14 @@ class RegisterController extends Controller
     }
     public function deleteuser($id)
     {
-        return $this->registerService->deleteUser($id);
+        $res =  $this->registerService->deleteUser($id);
+        return redirect()->route('home')->with('success', 'User deleted successfully');
     }
 
+    public function showUser($id)
+    {
+            $userId = $this->registerService->getUsers($id);
+            return view('show',compact('userId'));
+    }
 
 }
